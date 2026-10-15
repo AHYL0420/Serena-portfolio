@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>何云蕾 · 市场营销策划与业务增长作品集</title>
+<style>
+  :root{
+    --bg:#0a0e17;--bg-soft:#0f1521;--card:#141b2b;--card-hover:#1a2338;
+    --text:#e8edf7;--text-dim:#93a1b8;--accent:#ff7a45;--accent2:#3b82f6;
+    --line:rgba(148,163,184,.14);--radius:18px;--max:1200px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.75;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  img{max-width:100%;display:block}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(10,14,23,.85);backdrop-filter:blur(16px);
+    border-bottom:1px solid transparent;transition:.3s}
+  nav.scrolled{border-bottom-color:var(--line)}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between}
+  .logo{font-weight:800;font-size:17px;letter-spacing:.5px}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:26px;font-size:14px;color:var(--text-dim)}
+  .nav-links a{transition:.2s;position:relative}
+  .nav-links a:hover{color:var(--text)}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;
+    width:0;height:2px;background:var(--accent);transition:.25s}
+  .nav-links a:hover::after{width:100%}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  header{min-height:100vh;display:flex;align-items:center;
+    position:relative;overflow:hidden;padding:120px 0 80px}
+  .glow{position:absolute;border-radius:50%;filter:blur(130px);opacity:.3;pointer-events:none}
+  .glow.a{width:540px;height:540px;background:var(--accent);top:-160px;right:-140px}
+  .glow.b{width:480px;height:480px;background:var(--accent2);bottom:-200px;left:-160px}
+  .hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:center;position:relative}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+  .hero-tag{display:inline-block;padding:7px 16px;border-radius:999px;
+    background:rgba(255,122,69,.12);border:1px solid rgba(255,122,69,.35);
+    color:var(--accent);font-size:13px;margin-bottom:24px}
+  h1{font-size:clamp(36px,5.2vw,60px);line-height:1.15;font-weight:800;
+    letter-spacing:-1.5px;margin-bottom:22px}
+  h1 em{font-style:normal;background:linear-gradient(100deg,var(--accent),#ffb088);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-desc{font-size:clamp(15px,1.8vw,18px);color:var(--text-dim);max-width:600px;margin-bottom:34px}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:12px 26px;font-size:14px;color:var(--text-dim)}
+  .hero-meta span{display:flex;align-items:center;gap:8px}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .hero-photo{position:relative;border-radius:24px;overflow:hidden;
+    border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .hero-photo img{width:100%;height:auto;object-fit:cover}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+    border-radius:var(--radius);overflow:hidden;margin-top:70px}
+  .stat{background:var(--bg-soft);padding:32px 20px;text-align:center}
+  .stat b{display:block;font-size:clamp(24px,3.2vw,38px);font-weight:800;
+    color:var(--accent);letter-spacing:-1px}
+  .stat p{font-size:13px;color:var(--text-dim);margin-top:6px}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  section{padding:100px 0}
+  .sec-head{margin-bottom:52px}
+  .sec-num{font-size:13px;color:var(--accent);letter-spacing:3px;
+    font-weight:600;margin-bottom:12px;text-transform:uppercase}
+  .sec-title{font-size:clamp(26px,3.8vw,38px);font-weight:800;
+    letter-spacing:-.8px;margin-bottom:14px}
+  .sec-sub{color:var(--text-dim);max-width:720px;font-size:16px}
+
+  .card{background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);padding:36px;transition:.35s;
+    position:relative;overflow:hidden}
+  .card:hover{background:var(--card-hover);border-color:rgba(255,122,69,.28);transform:translateY(-4px)}
+  .card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;
+    background:linear-gradient(var(--accent),var(--accent2));transition:.4s}
+  .card:hover::before{height:100%}
+  .project{margin-bottom:26px}
+  .proj-top{display:flex;align-items:flex-start;justify-content:space-between;
+    gap:20px;flex-wrap:wrap;margin-bottom:18px}
+  .proj-title{font-size:22px;font-weight:700;letter-spacing:-.3px}
+  .proj-role{font-size:12px;color:var(--accent);background:rgba(255,122,69,.1);
+    border:1px solid rgba(255,122,69,.3);padding:5px 12px;border-radius:999px;white-space:nowrap}
+  .proj-desc{color:var(--text-dim);font-size:15px;margin-bottom:20px}
+
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:14px;margin:20px 0}
+  .metric{background:rgba(255,255,255,.03);border:1px solid var(--line);
+    border-radius:12px;padding:16px}
+  .metric b{display:block;font-size:22px;font-weight:800;color:var(--accent);letter-spacing:-.5px}
+  .metric span{font-size:12px;color:var(--text-dim)}
+
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .tag{font-size:12.5px;color:var(--text-dim);padding:5px 12px;
+    background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:999px}
+
+  .list{list-style:none;margin-top:14px}
+  .list li{position:relative;padding-left:20px;margin-bottom:9px;
+    font-size:14.5px;color:var(--text-dim)}
+  .list li::before{content:'';position:absolute;left:0;top:10px;
+    width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.7}
+  .hl{color:var(--text);font-weight:600}
+
+  .case{background:rgba(255,255,255,.02);border:1px solid var(--line);
+    border-radius:14px;padding:24px;margin-top:18px}
+  .case h4{font-size:16px;color:var(--accent);margin-bottom:12px;font-weight:700}
+
+  .img-grid{display:grid;gap:16px;margin-top:22px}
+  .img-grid.g2{grid-template-columns:repeat(2,1fr)}
+  .img-grid.g3{grid-template-columns:repeat(3,1fr)}
+  .img-grid.single{grid-template-columns:1fr}
+  @media(max-width:760px){
+    .img-grid.g2,.img-grid.g3{grid-template-columns:1fr}
+  }
+  .img-box{background:rgba(255,255,255,.03);border:1px solid var(--line);
+    border-radius:12px;overflow:hidden;transition:.3s}
+  .img-box:hover{border-color:rgba(255,122,69,.3);transform:translateY(-3px)}
+  .img-box img{width:100%;height:auto;display:block;
+    background:linear-gradient(135deg,rgba(255,122,69,.08),rgba(59,130,246,.08));
+    min-height:120px;object-fit:cover}
+  .img-box .cap{padding:12px 14px;font-size:13px;color:var(--text-dim);
+    border-top:1px solid var(--line)}
+
+  .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+  @media(max-width:860px){.video-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.video-grid{grid-template-columns:1fr}}
+  .video-card{background:rgba(255,255,255,.03);border:1px solid var(--line);
+    border-radius:14px;overflow:hidden;transition:.3s;display:block}
+  .video-card:hover{border-color:rgba(255,122,69,.35);transform:translateY(-4px)}
+  .video-card img{width:100%;aspect-ratio:9/14;object-fit:cover;display:block}
+  .video-info{padding:14px}
+  .video-title{font-size:14px;font-weight:600;margin-bottom:8px;line-height:1.5}
+  .video-link{font-size:12px;color:var(--accent);word-break:break-all;opacity:.9}
+
+  .chain{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
+  .chain-item{background:rgba(255,255,255,.04);border:1px solid var(--line);
+    border-radius:10px;padding:10px 16px;font-size:13.5px}
+  .chain-arrow{color:var(--accent);font-weight:700}
+
+  .ability-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:900px){.ability-grid{grid-template-columns:1fr}}
+  .ability h3{font-size:17px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .ability h3::before{content:'';width:4px;height:18px;border-radius:2px;
+    background:linear-gradient(var(--accent),var(--accent2))}
+
+  .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(max-width:900px){.mini-grid{grid-template-columns:1fr}}
+  .mini{padding:28px}
+  .mini h3{font-size:17px;margin-bottom:10px}
+  .mini p{font-size:14px;color:var(--text-dim);margin-bottom:14px}
+
+  .end{text-align:center;padding:110px 0 90px;border-top:1px solid var(--line)}
+  .end h2{font-size:clamp(28px,4.6vw,44px);font-weight:800;letter-spacing:-1px;margin-bottom:18px}
+  .end p{color:var(--text-dim);margin-bottom:34px}
+  .contacts{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+  .contact{padding:13px 26px;border-radius:999px;background:var(--card);
+    border:1px solid var(--line);font-size:14px;transition:.25s}
+  .contact:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.22,1,.36,1)}
+  .reveal.on{opacity:1;transform:none}
+
+  footer{text-align:center;padding:26px;font-size:12.5px;color:var(--text-dim);
+    border-top:1px solid var(--line)}
+
+  .icon{width:18px;height:18px;display:inline-flex;align-items:center;
+    justify-content:center;color:var(--accent);margin-right:8px}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="logo">何云蕾<span>.</span></div>
+    <div class="nav-links">
+      <a href="#core">核心项目</a>
+      <a href="#kjt">K姐聊跨境</a>
+      <a href="#wahaha">娃哈哈</a>
+      <a href="#growth">业务增量</a>
+      <a href="#other">其他经历</a>
+      <a href="#ability">能力总结</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="glow a"></div>
+  <div class="glow b"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">市场营销策划 · 业务增长</div>
+        <h1>懂品牌、能策划<br>还能<em>直接带来业务增长</em></h1>
+        <p class="hero-desc">从品牌体系到自媒体IP，从整合营销到出海业务增量。擅长把市场动作转化为可衡量的业务结果。</p>
+        <div class="hero-meta">
+          <span><i class="dot"></i>何云蕾</span>
+          <span><i class="dot"></i>杭州</span>
+          <span><i class="dot"></i>13735572621</span>
+          <span><i class="dot"></i>396338283@qq.com</span>
+          <span><i class="dot"></i>微信同手机号</span>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="images/portrait.jpg" alt="何云蕾个人形象照">
+      </div>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><b>17万+</b><p>全网粉丝</p></div>
+      <div class="stat"><b>700万+</b><p>IP营收转化</p></div>
+      <div class="stat"><b>3亿+</b><p>单项目全渠道曝光</p></div>
+      <div class="stat"><b>600万+</b><p>出海业务营收带动</p></div>
+    </div>
+  </div>
+</header>
+
+<section id="profile">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">Profile</div>
+      <h2 class="sec-title">个人定位</h2>
+    </div>
+    <div class="card reveal">
+      <h3 style="font-size:19px;margin-bottom:16px">工作经历</h3>
+      <ul class="list">
+        <li><span class="hl">百世物流科技有限公司</span>｜市场营销策划专家｜2015.10–2026.9</li>
+        <li><span class="hl">杭州百事可乐饮料有限公司</span>｜渠道销售部 渠道部助理 / 通路行销专员｜2012.06–2015.04</li>
+      </ul>
+      <h3 style="font-size:19px;margin:26px 0 16px">成长路径</h3>
+      <p style="color:var(--text-dim);font-size:14.5px">从市场策划专员起步，2次晋升，逐步负责品牌体系、IP孵化、整合营销及业务增长。</p>
+      <h3 style="font-size:19px;margin:26px 0 16px">核心能力</h3>
+      <div class="tags" style="gap:12px">
+        <span class="tag"><span class="icon">◆</span>品牌策划</span>
+        <span class="tag"><span class="icon">◆</span>整合营销</span>
+        <span class="tag"><span class="icon">◆</span>自媒体IP运营</span>
+        <span class="tag"><span class="icon">◆</span>私域转化</span>
+        <span class="tag"><span class="icon">◆</span>出海业务增长</span>
+        <span class="tag"><span class="icon">◆</span>跨部门统筹</span>
+      </div>
+      <p style="color:var(--text-dim);font-size:14px;margin-top:20px">
+        <span class="hl">能力侧重：</span>营销策划能力 + 业务增长能力，两者并重。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="core" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">Core Projects</div>
+      <h2 class="sec-title">三个核心项目</h2>
+      <p class="sec-sub">分别代表我的自媒体运营能力、事件营销基本功，以及从品牌市场走向业务市场的复合能力。</p>
+    </div>
+    <div class="card project reveal">
+      <div class="proj-top">
+        <div class="proj-title">01 · K姐聊跨境账号运营</div>
+        <div class="proj-role">项目总负责 / 总策划 / 商务对接</div>
+      </div>
+      <p class="proj-desc">从 0 到 1 打造跨境行业专家人设 IP，覆盖抖音、视频号、小红书、TikTok，沉淀私域客户并实现业务转化。</p>
+      <div class="metrics">
+        <div class="metric"><b>17万+</b><span>全网粉丝</span></div>
+        <div class="metric"><b>468条</b><span>抖音作品</span></div>
+        <div class="metric"><b>20+</b><span>10万+爆款</span></div>
+        <div class="metric"><b>700万+</b><span>营收转化</span></div>
+      </div>
+    </div>
+    <div class="card project reveal">
+      <div class="proj-top">
+        <div class="proj-title">02 · 娃哈哈“全力苏出”事件营销</div>
+        <div class="proj-role">项目主导 / 全流程跟进</div>
+      </div>
+      <p class="proj-desc">双11旺季联合娃哈哈，面向全行业快递员免费发放苏打水，线上线下联动打造公益事件营销。</p>
+      <div class="metrics">
+        <div class="metric"><b>3亿+</b><span>全渠道曝光</span></div>
+        <div class="metric"><b>41城</b><span>覆盖城市</span></div>
+        <div class="metric"><b>6001店</b><span>活动门店</span></div>
+        <div class="metric"><b>137.5万瓶</b><span>苏打水</span></div>
+      </div>
+    </div>
+    <div class="card project reveal">
+      <div class="proj-top">
+        <div class="proj-title">03 · 出海业务增量项目</div>
+        <div class="proj-role">市场资源主导 / 大客户统筹</div>
+      </div>
+      <p class="proj-desc">面向中国出海东南亚、拉美市场，通过渠道搭建、活动获客与大客户解决方案，带动跨境物流、海外仓配等业务增长。</p>
+      <div class="metrics">
+        <div class="metric"><b>600万+</b><span>营收带动</span></div>
+        <div class="metric"><b>3年</b><span>长虹合作</span></div>
+        <div class="metric"><b>3国</b><span>覆盖国家</span></div>
+        <div class="metric"><b>5部门</b><span>跨部门协同</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kjt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">Project 01</div>
+      <h2 class="sec-title">K姐聊跨境</h2>
+      <p class="sec-sub">2023.11 起号至今 · 4 人团队 · 我负责项目总负责、总策划、商务对接</p>
+    </div>
+
+    <div class="card reveal">
+      <h3 style="font-size:19px;margin-bottom:16px">平台与内容数据</h3>
+      <div class="metrics">
+        <div class="metric"><b>16.5万+</b><span>抖音粉丝</span></div>
+        <div class="metric"><b>6756+</b><span>视频号关注</span></div>
+        <div class="metric"><b>2000+</b><span>小红书粉丝</span></div>
+        <div class="metric"><b>1000+</b><span>TikTok粉丝</span></div>
+        <div class="metric"><b>44.7万+</b><span>抖音累计点赞</span></div>
+        <div class="metric"><b>5条</b><span>40万+播放视频</span></div>
+      </div>
+      <ul class="list">
+        <li>短视频为主，1 周 3 更，抖音累计视频超 468 条</li>
+        <li>10 万+ 爆款视频 20+，爆款方向为追热点内容与海外资源探访实拍</li>
+        <li>内容方向：跨境政策解读、平台信息反馈、海外风土人情、海外资源探访</li>
+        <li>我负责确认选题、参与脚本与标题、给剪辑框架并终审</li>
+      </ul>
+
+      <h3 style="font-size:17px;margin:28px 0 14px">账号入口与主页</h3>
+      <div class="img-grid g3">
+        <div class="img-box">
+          <img src="images/kjt-qrcode.png" alt="K姐抖音二维码">
+          <div class="cap">扫码关注抖音号 kkkuajing</div>
+        </div>
+        <div class="img-box">
+          <img src="images/kjt-douyin.png" alt="抖音号主页截图">
+          <div class="cap">抖音 · K姐聊跨境 · 16.5万粉丝</div>
+        </div>
+        <div class="img-box">
+          <img src="images/kjt-shipinhao.png" alt="视频号主页截图">
+          <div class="cap">视频号 · 视频418 · 关注者6756</div>
+        </div>
+      </div>
+
+      <h3 style="font-size:17px;margin:28px 0 14px">爆款视频系列数据</h3>
+      <div class="img-grid single">
+        <div class="img-box">
+          <img src="images/kjt-collection.png" alt="K姐出海视频集合集数据">
+          <div class="cap">印尼出海指南 427.7万播放 · 出海生意经 334.9万播放 · 巴西出海指南 16.8万播放 · 泰国出海指南 25.5万播放</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:24px">
+      <h3 style="font-size:19px;margin-bottom:16px">代表视频内容展示</h3>
+      <div class="video-grid">
+        <a class="video-card" href="https://v.douyin.com/Ynf1XX1Ts9s" target="_blank">
+          <img src="images/video1.jpg" alt="视频1封面">
+          <div class="video-info">
+            <div class="video-title">在印尼开公司，银行账户如何开户流程</div>
+            <div class="video-link">https://v.douyin.com/Ynf1XX1Ts9s</div>
+          </div>
+        </a>
+        <a class="video-card" href="https://v.douyin.com/tJHaBtpA5c4/" target="_blank">
+          <img src="images/video2.jpg" alt="视频2封面">
+          <div class="video-info">
+            <div class="video-title">不要想着降维打击印尼，印尼不是2005年的中国</div>
+            <div class="video-link">https://v.douyin.com/tJHaBtpA5c4/</div>
+          </div>
+        </a>
+        <a class="video-card" href="https://v.douyin.com/xH01hDXez4Q/" target="_blank">
+          <img src="images/video3.jpg" alt="视频3封面">
+          <div class="video-info">
+            <div class="video-title">印尼你看到的不一定是你认为的，专业的人做专业的事</div>
+            <div class="video-link">https://v.douyin.com/xH01hDXez4Q/</div>
+          </div>
+        </a>
+        <a class="video-card" href="https://v.douyin.com/EcGM4jcWLBQ/" target="_blank">
+          <img src="images/video4.jpg" alt="视频4封面">
+          <div class="video-info">
+            <div class="video-title">关税围剿，跨境卖家如何突出重围？</div>
+            <div class="video-link">https://v.douyin.com/EcGM4jcWLBQ/</div>
+          </div>
+        </a>
+        <a class="video-card" href="https://v.douyin.com/ZNx_eSgsdY0/" target="_blank">
+          <img src="images/video5.jpg" alt="视频5封面">
+          <div class="video-info">
+            <div class="video-title">从卖家到品牌，出海到底该怎么做？</div>
+            <div class="video-link">https://v.douyin.com/ZNx_eSgsdY0/</div>
+          </div>
+        </a>
+        <a class="video-card" href="https://v.douyin.com/U51wsnfW7bU/" target="_blank">
+          <img src="images/video6.jpg" alt="视频6封面">
+          <div class="video-info">
+            <div class="video-title">巴西的税有多复杂？</div>
+            <div class="video-link">https://v.douyin.com/U51wsnfW7bU/</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:24px">
+      <h3 style="font-size:19px;margin-bottom:16px">私域转化与营收</h3>
+      <div class="metrics">
+        <div class="metric"><b>1000+</b><span>微信精准客户</span></div>
+        <div class="metric"><b>700万+</b><span>2年营收转化</span></div>
+        <div class="metric"><b>85%</b><span>物流及海外仓占比</span></div>
+        <div class="metric"><b>10%</b><span>游学占比</span></div>
+      </div>
+      <ul class="list">
+        <li>客户通过账号搜索添加微信，我逐个了解诉求、剖析和答疑</li>
+        <li>通过朋友圈展示、群发消息、拉群对接业务，形成转化闭环</li>
+        <li>业务相关需求会拉群，将具体需求与相关业务方对接并跟进</li>
+      </ul>
+      <div class="chain">
+        <span class="chain-item">公域内容</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-item">微信私域</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-item">需求诊断</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-item">拉群对接</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-item">成交转化</span>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:24px">
+      <h3 style="font-size:19px;margin-bottom:6px">代表案例</h3>
+      <div class="case">
+        <h4>案例一：国内知名剃须刀品牌出海越南</h4>
+        <ul class="list">
+          <li>客户因国内市场内卷，想品牌出海东南亚，但不了解市场、无当地散货渠道</li>
+          <li>通过抖音看到 K 姐后产生信任并建立联系</li>
+          <li>我和团队策划越南游学各渠道对接点，制定游学计划并组织执行</li>
+          <li>对接当地 TOP 级线下电器门店、MCN、Shopee、TikTok、山海图等资源</li>
+          <li>让国内客户与当地渠道直线对接，样品挑选、合作意向对接、分批测试销售</li>
+          <li><span class="hl">结果：客户越南单个市场已成交近百万，百世提供物流及海外仓服务，并拓展后续线上线下售卖渠道</span></li>
+        </ul>
+      </div>
+      <div class="case">
+        <h4>案例二：印尼本土化家庭机械与五金卖家</h4>
+        <ul class="list">
+          <li>客户在印尼做本土化家庭机械与五金，渠道线上线下 28 开</li>
+          <li>在印尼看到 K 姐账号内容后产生信任，并在当地建立联系</li>
+          <li>将中国制造五金及机械产品运向东南亚的服务交由我们</li>
+          <li>后续在账号上做资源推荐广告，提供渠道散货服务</li>
+          <li>我主导 K 姐人设打造、内容策划及撰写，后续资源推荐与卖家对接由我跟进</li>
+          <li><span class="hl">结果：整体物流运费持续超百万元</span></li>
+        </ul>
+      </div>
+      <div class="case">
+        <h4>越南游学项目数据</h4>
+        <ul class="list">
+          <li>国内出海游学考察客户 5 批次，每批次约 8–15 人</li>
+          <li>越南当地渠道及平台资源 10–15 家</li>
+          <li>促成意向客户 10+</li>
+        </ul>
+        <div class="img-grid single" style="margin-top:16px">
+          <div class="img-box">
+            <img src="images/vietnam-group.jpg" alt="K姐越南研学之旅合影">
+            <div class="cap">K姐越南研学之旅，探索无限商机</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wahaha" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">Project 02</div>
+      <h2 class="sec-title">娃哈哈“全力苏出”</h2>
+      <p class="sec-sub">双11电商及物流旺季 · 公益事件营销 · 我主导从拉赞助到最终落地全流程</p>
+    </div>
+    <div class="card reveal">
+      <h3 style="font-size:19px;margin-bottom:16px">项目逻辑</h3>
+      <ul class="list">
+        <li>娃哈哈苏打水为新品，需要推广给更多消费者</li>
+        <li>公益活动比广告更柔软，更能产生品牌好感</li>
+        <li>百世线下资源：1000 万份快递 PE 袋、6000 家门店、5000+ 快递三轮车</li>
+        <li>以苏打水产品 + 爱心公益为核心，结合快递小哥工作场景，打造“全力苏出”主题</li>
+      </ul>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+      <h3 style="font-size:19px;margin-bottom:16px">执行过程</h3>
+      <ul class="list">
+        <li>与娃哈哈市场部探索历年双11关爱活动方案，确定合作方向</li>
+        <li>11 月 3 日前协调公司 41 个省市负责人</li>
+        <li>将水从杭州运到全国 6001 个快递站点门店</li>
+        <li>海报、水、车贴等物料发放、站点拜访、粘贴均需照片回传</li>
+        <li>线上联合集团公关部打造话题“全力苏出”美好生活全球见</li>
+        <li>联动三所高校举行线下荧光夜跑公益跑</li>
+        <li>抖音、微博等头部平台发起话题讨论，联合传统媒体做公益发声</li>
+      </ul>
+    </div>
+    <div class="card reveal" style="margin-top:24px">
+      <h3 style="font-size:19px;margin-bottom:16px">项目成果</h3>
+      <div class="metrics">
+        <div class="metric"><b>137.5万+</b><span>瓶苏打水</span></div>
+        <div class="metric"><b>41城</b><span>覆盖城市</span></div>
+        <div class="metric"><b>6001店</b><span>活动门店</span></div>
+        <div class="metric"><b>18800张</b><span>活动海报</span></div>
+        <div class="metric"><b>3亿+</b><span>全渠道曝光</span></div>
+        <div class="metric"><b>140万+</b><span>水与牛奶粥份数</span></div>
+      </div>
+      <ul class="list" style="margin-top:18px">
+        <li>2 辆 9.6 米车体广告 + 5000 辆三轮车车体广告</li>
+        <li>1000 万份活动专属 PE 袋 + 831 家便利店 POS 机副屏</li>
+        <li>三所高校万余名学子参与荧光夜跑，募集爱心步数超 4 亿步</li>
+        <li>145 家传统媒体、10+ 自媒体参与报道</li>
+        <li>成功将“百世=有温度的效率”植入用户心智</li>
+      </ul>
+      <h3 style="font-size:17px;margin:28px 0 14px">活动现场展示</h3>
+      <div class="img-grid g3">
+        <div class="img-box">
+          <img src="images/wahaha1.jpg" alt="活动纪念册封面">
+          <div class="cap">全力苏出 · 为爱抵达</div>
+        </div>
+        <div class="img-box">
+          <img src="images/wahaha2.jpg" alt="快递员取水现场">
+          <div class="cap">全国快递站点免费取水</div>
+        </div>
+        <div class="img-box">
+          <img src="images/wahaha3.jpg" alt="车体广告/门店海报">
+          <div class="cap">2辆9.6米 + 5000辆三轮车车体广告</div>
+        </div>
+        <div class="img-box">
+          <img src="images/wahaha4.jpg" alt="快递小哥加油站">
+          <div class="cap">快递小哥的加油站</div>
+        </div>
+        <div class="img-box">
+          <img src="images/wahaha5.jpg" alt="三所高校荧光夜跑">
+          <div class="cap">重庆西南大学 / 四川传媒学院 / 浙江传媒学院</div>
+        </div>
+        <div class="img-box">
+          <img src="images/wahaha6.jpg" alt="快递员/环卫工笑脸特写">
+          <div class="cap">传递每一份爱心</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="growth">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">Project 03</div>
+      <h2 class="sec-title">出海业务增量项目</h2>
+      <p class="sec-sub">2024 – 2026 年中 · 负责中国出海东南亚、拉美市场 · 累计带动出海业务营收 600万+</p>
+    </div>
+
+    <div class="card reveal">
+      <h3 style="font-size:19px;margin-bottom:16px">我的关键动作</h3>
+      <ul class="list">
+        <li>主导市场资源对接、行业渠道搭建与活动获客</li>
+        <li>搭建平台及行业媒体常态化合作渠道</li>
+        <li>通过展会、沙龙等形式做品牌展台业务展示，现场帮助销售获取线索</li>
+        <li>后续线索转化由销售主导，我负责每月转化跟进及月度复盘 SOP</li>
+        <li>针对品牌型大客户定制化需求，联动多个业务部门统筹解决方案</li>
+      </ul>
+      <div class="tags" style="margin-top:20px">
+        <span class="tag">跨境物流</span><span class="tag">海外仓配</span>
+        <span class="tag">本地化服务</span><span class="tag">SaaS产品</span>
+        <span class="tag">货盘业务</span>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:24px">
+      <h3 style="font-size:19px;margin-bottom:16px">组织参加国内大型活动与行业合作</h3>
+      <p style="color:var(--text-dim);font-size:14.5px;margin-bottom:16px">
+        2024–2025年持续参加跨境电商行业展会，通过展位展示、论坛分享、现场交流获取精准客户线索。
+      </p>
+      <div class="img-grid g2">
+        <div class="img-box">
+          <img src="images/expo1.jpg" alt="中国（广州）跨境电商交易会现场">
+          <div class="cap">Shopee × 百世 展位 · 现场交流</div>
+        </div>
+        <div class="img-box">
+          <img src="images/expo2.jpg" alt="论坛演讲/展位交流/团队合影">
+          <div class="cap">行业论坛演讲 & 展会现场获客</div>
+        </div>
+      </div>
+      <div class="case" style="margin-top:24px">
+        <h4>板块一：行业内展会精准获客</h4>
+        <ul class="list">
+          <li>聚焦大件出海痛点</li>
+          <li>提供专业解决方案</li>
+          <li>做线上线下联合传播</li>
+        </ul>
+        <p style="font-size:13px;color:var(--accent);margin-top:12px;word-break:break-all">
+          <span class="hl">新闻链接：</span>百世跨境发布大件出海全链路数字化解决方案 助力中国家具出海<br>
+          http://cs.zjol.com.cn/jms/202603/t20260320_31562048.shtml
+        </p>
+        <p style="font-size:13.5px;color:var(--text-dim);margin-top:10px">
+          2026年3月18–21日，第57届中国（广州）国际家具博览会举行，百世跨境受邀参展并发表演讲，正式发布大件出海全链路数字化解决方案，针对家具、家电等大件商品出海面临的物流成本高、库存周转慢、全链路追踪难等核心痛点，提供从国内集货到末端履约的一站式服务。
+        </p>
+      </div>
+      <div class="case">
+        <h4>板块二：头部平台及头部自媒体长期合作</h4>
+        <ul class="list">
+          <li>资源互换</li>
+          <li>流量互导</li>
+          <li>长期合作</li>
+        </ul>
+        <p style="font-size:14px;margin-top:14px">
+          <span class="hl">文章一：</span>百世荣膺Shopee“卓越招商合作伙伴”奖项，全链路出海服务再获权威认可<br>
+          <span style="font-size:12.5px;color:var(--accent);word-break:break-all">
+            https://mp.weixin.qq.com/s/ckpwj9QQgQeaooqMp-n0wQ
+          </span>
+        </p>
+        <p style="font-size:13.5px;color:var(--text-dim);margin-top:8px">
+          2026年8月6日，百世在2026 Shopee生态合作伙伴增长峰会中荣膺“卓越招商合作伙伴”称号。百世跨境服务网络已全面覆盖泰国、越南、马来西亚、新加坡、印尼、菲律宾等东南亚六大核心市场，实现“一单走遍东南亚六国”。
+        </p>
+        <p style="font-size:14px;margin-top:18px">
+          <span class="hl">文章二：</span>百世跨境连续三届荣获年度“东南亚最佳物流”奖项<br>
+          <span style="font-size:12.5px;color:var(--accent);word-break:break-all">
+            https://mp.weixin.qq.com/s/HVDjykPDD2LpigQYZ_9_zA
+          </span>
+        </p>
+        <p style="font-size:13.5px;color:var(--text-dim);margin-top:8px">
+          2026年1月13日，百世跨境出席“利润攻坚课东南亚电商年终总结大课暨第三届东南亚电商出海服务颁奖盛典”，荣获2025年度“东南亚最佳物流”奖项，自星火奖举办以来已连续三届获此称号。百世跨境已构建海陆空多种运输模式，并自主研发智能物流管理系统，实现货物全程可视化追踪。
+        </p>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:24px">
+      <h3 style="font-size:19px;margin-bottom:16px">代表案例：长虹电器品牌出海（合作3年）</h3>
+      <ul class="list">
+        <li>客户需求：全链路物流服务商</li>
+        <li>服务链路：泰国海港起降服务 → 进口-海关流程 → 整箱运输集装箱从港口到仓库 → 百世在 SCM 仓库卸货 → 百世仓储服务 → B2B 与 B2C 运输 → 终端 B2B/B2C 交付至客户站点</li>
+        <li>涉及 4 个业务，协同 5 个部门</li>
+        <li>覆盖国家：泰国、新加坡、马来西亚</li>
+        <li>国内节点：安徽合肥、广东中山</li>
+        <li>主要产品：彩电，SKU 约 5 个</li>
+        <li>发现安装痛点后，泰国地区协调当地快递网点，进行快递员专项培训，提供送装服务</li>
+        <li>5 个部门各有 1 个对接人，推进后续客户服务</li>
+        <li><span class="hl">结果：客户已合作 3 年</span></li>
+      </ul>
+      <div class="img-grid single" style="margin-top:20px">
+        <div class="img-box">
+          <img src="images/changhong-case.jpg" alt="长虹客户案例说明图">
+          <div class="cap">百世一站式出海成功案例-长虹 · 覆盖泰国、新加坡、马来西亚</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="other" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">More</div>
+      <h2 class="sec-title">其他项目经历</h2>
+    </div>
+    <div class="mini-grid">
+      <div class="card mini reveal">
+        <h3>海外品牌体系搭建</h3>
+        <p>与部门负责人赴东南亚市场调研，联动当地团队，从 0 到 1 搭建海外品牌体系管理规范。</p>
+        <div class="metrics">
+          <div class="metric"><b>3套</b><span>标准方案</span></div>
+          <div class="metric"><b>10国</b><span>覆盖国家</span></div>
+        </div>
+        <ul class="list">
+          <li>收集各国 TOP 级竞品品牌信息及当地形象，找出差异化与本地化需求</li>
+          <li>结合国内品牌调性，制定符合本土审美的配色与视觉方案</li>
+          <li>3 套中选 1 套落地，覆盖百世海外所有国家</li>
+          <li>我负责方案呈现和落地执行</li>
+        </ul>
+      </div>
+      <div class="card mini reveal">
+        <h3>农品优行</h3>
+        <p>探索“物流+商流”相结合的助农项目，我主要负责选品及 OEM 产品研发与产品把控。</p>
+        <div class="metrics">
+          <div class="metric"><b>50万+</b><span>项目年订单</span></div>
+          <div class="metric"><b>150万+</b><span>项目创收</span></div>
+          <div class="metric"><b>30万+</b><span>我主导产品营收</span></div>
+        </div>
+        <ul class="list">
+          <li>主导蛋黄酥、海鸭蛋、大闸蟹券、白酒、茶叶、粽子、螺蛳粉等 OEM 产品</li>
+          <li>在广西北海找到合作厂家，确认品控后做定制化包装</li>
+          <li>将产品与公司 IP 形象结合，在包装和自媒体上露出推广</li>
+          <li>蛋黄酥包装成中秋礼盒，延长售卖时间</li>
+        </ul>
+      </div>
+      <div class="card mini reveal">
+        <h3>整合营销与异业联盟</h3>
+        <p>统筹百世快递、快运、国际等业务线，策划线上线下联动的品牌营销。</p>
+        <div class="metrics">
+          <div class="metric"><b>50+</b><span>头部品牌合作</span></div>
+          <div class="metric"><b>3亿+</b><span>最高单次曝光</span></div>
+        </div>
+        <ul class="list">
+          <li>主导与娃哈哈、农夫山泉、滴滴、淘宝、菜鸟、Shopee、TikTok 等品牌跨界合作</li>
+          <li>实现品牌共赢与业务协同</li>
+        </ul>
+      </div>
+      <div class="card mini reveal">
+        <h3>国内品牌体系执行推进</h3>
+        <p>进入时国内品牌搭建已有完整方案，我主要负责后续执行和推进。</p>
+        <ul class="list">
+          <li>快递、国际 VI 落地和物料审核</li>
+          <li>培训宣导</li>
+          <li>供应商管理对接</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ability">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">Capability</div>
+      <h2 class="sec-title">我能为团队带来什么</h2>
+      <p class="sec-sub">营销策划能力与业务增长能力并重。</p>
+    </div>
+    <div class="ability-grid">
+      <div class="card ability reveal">
+        <h3>营销策划能力</h3>
+        <ul class="list">
+          <li>事件营销与整合营销</li>
+          <li>品牌体系搭建与落地</li>
+          <li>跨界合作与异业联盟</li>
+          <li>线上线下全渠道传播</li>
+        </ul>
+      </div>
+      <div class="card ability reveal">
+        <h3>业务增长能力</h3>
+        <ul class="list">
+          <li>自媒体 IP 获客</li>
+          <li>私域沉淀与转化</li>
+          <li>行业渠道搭建与线索获取</li>
+          <li>大客户定制化方案统筹</li>
+        </ul>
+      </div>
+      <div class="card ability reveal">
+        <h3>个人特质</h3>
+        <ul class="list">
+          <li>从 0 到 1 的项目开拓</li>
+          <li>跨部门协同与资源整合</li>
+          <li>数据复盘与 SOP 沉淀</li>
+          <li>强落地执行能力</li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:clamp(18px,2.4vw,24px);font-weight:700;
+      margin-top:50px;letter-spacing:-.3px">
+      懂品牌、能策划、<span style="color:var(--accent)">还能带来业务增长</span>
+    </p>
+  </div>
+</section>
+
+<div class="end">
+  <div class="wrap">
+    <h2>期待与您进一步沟通</h2>
+    <p>何云蕾 · 杭州 · 市场营销策划 / 业务增长</p>
+    <div class="contacts">
+      <a class="contact" href="tel:13735572621">13735572621</a>
+      <a class="contact" href="mailto:396338283@qq.com">396338283@qq.com</a>
+      <span class="contact">微信同手机号</span>
+    </div>
+  </div>
+</div>
+
+<footer>© 2025 何云蕾 · 市场营销策划与业务增长作品集</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const nums = document.querySelectorAll('.stat b');
+  const numIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const text = el.textContent;
+      const match = text.match(/[\d.]+/);
+      if (!match) return;
+      const target = parseFloat(match[0]);
+      const suffix = text.replace(match[0], '');
+      let cur = 0;
+      const step = target / 40;
+      const timer = setInterval(() => {
+        cur += step;
+        if (cur >= target) { cur = target; clearInterval(timer); }
+        el.textContent = (Number.isInteger(target) ? Math.floor(cur) : cur.toFixed(1)) + suffix;
+      }, 22);
+      numIO.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  nums.forEach(el => numIO.observe(el));
+</script>
+</body>
+</html>
